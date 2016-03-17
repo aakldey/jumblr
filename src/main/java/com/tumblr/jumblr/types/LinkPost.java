@@ -11,6 +11,7 @@ public class LinkPost extends SafePost {
     private String title;
     private String url;
     private String description;
+    private String thumbnail;
 
     /**
      * Get the title for this post
@@ -59,6 +60,10 @@ public class LinkPost extends SafePost {
     public void setLinkUrl(String url) {
         this.url = url;
     }
+    
+    public void setThumbnail(String url) {
+        this.thumbnail = url;
+    }
 
     @Override
     public PostType getType() {
@@ -74,6 +79,7 @@ public class LinkPost extends SafePost {
         final Map<String, Object> detail = super.detail();
         detail.put("title", title);
         detail.put("url", url);
+        detail.put("thumbnail", thumbnail);
         detail.put("description", description);
         return detail;
     }
